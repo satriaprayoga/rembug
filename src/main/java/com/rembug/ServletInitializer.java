@@ -1,4 +1,4 @@
-package com.rembug;
+ package com.rembug;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
