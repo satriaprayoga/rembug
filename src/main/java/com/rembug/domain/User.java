@@ -1,6 +1,5 @@
 package com.rembug.domain;
 
-import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,7 +27,7 @@ import com.rembug.config.Constant;
 @Entity
 @Table(name = "user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class User extends AuditingEntity implements Serializable {
+public class User extends AuditingEntity {
 	private static final long serialVersionUID = -8521147178341958479L;
 
 	@Id
@@ -78,7 +77,7 @@ public class User extends AuditingEntity implements Serializable {
 
 	@JsonIgnore
 	@ManyToMany
-	@JoinTable(name = "jhi_user_authority", joinColumns = {
+	@JoinTable(name = "user_authority", joinColumns = {
 			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "authority_name", referencedColumnName = "name") })
 	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)

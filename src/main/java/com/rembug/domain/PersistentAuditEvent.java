@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "persistent_audit_event")
 public class PersistentAuditEvent {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "event_id")
     private Long id;
@@ -37,7 +37,7 @@ public class PersistentAuditEvent {
     @ElementCollection
     @MapKeyColumn(name = "name")
     @Column(name = "value")
-    @CollectionTable(name = "persistent_audit_evt_data", joinColumns=@JoinColumn(name="event_id"))
+    @CollectionTable(name = "jhi_persistent_audit_evt_data", joinColumns=@JoinColumn(name="event_id"))
     private Map<String, String> data = new HashMap<>();
 
     public Long getId() {

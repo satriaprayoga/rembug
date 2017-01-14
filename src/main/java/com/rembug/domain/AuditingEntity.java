@@ -27,9 +27,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @MappedSuperclass
 @Audited
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AuditingEntity{
+public abstract class AuditingEntity implements Serializable{
 
 	
+	private static final long serialVersionUID = 1L;
+
 	@CreatedBy
 	@Column(name="created_by", nullable=false, updatable=false, length=50)
 	@JsonIgnore
